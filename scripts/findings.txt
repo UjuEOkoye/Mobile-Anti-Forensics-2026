@@ -1,0 +1,320 @@
+AndroidEraser2 Running Findings
+Date: 2026-05-13
+App:
+- Package: com.cbinnovations.androideraser
+- APK used: C:\AndroidForensicsProject\CleanerScope\apks\androideraser\xapk_extract\com.cbinnovations.androideraser.apk
+
+Purpose
+- This file is a running experiment note for AndroidEraser2.
+- It is updated phase by phase so findings are preserved as the experiment progresses.
+
+Acquisition Mode
+- Rooted logical acquisition is in use for this run.
+- Immediate post-wipe logcat dump is also being collected as a separate volatile artifact source.
+
+Important Source Paths
+- /data/system_ce/0/recent_tasks
+- /data/system_ce/0/snapshots
+- /data/system_ce/0/recent_images
+- /data/system/usagestats
+- /data/data/com.cbinnovations.androideraser/cache
+- /data/data/com.cbinnovations.androideraser/shared_prefs
+- /data/data/com.cbinnovations.androideraser/databases
+- /data/data/com.android.providers.media/databases/external.db
+- /data/data/com.android.providers.downloads/databases/downloads.db
+- /data/data/com.android.documentsui/databases/lastAccess.db
+
+Phase A: Baseline Logical Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseA_Baseline_LogicalRun
+
+Summary:
+- recent_tasks: 0
+- snapshots: 0
+- recent_images: 0
+- usage_stats: baseline only
+- app_private_cache: 0
+- app_private_shared_prefs: 0
+- app_private_databases: 0
+- os_artifacts: 0
+
+Interpretation:
+- This is a clean installed-app baseline.
+- No meaningful app-private artifacts were present yet.
+- usage_stats only contained baseline structure and version content, not meaningful AndroidEraser activity payloads.
+
+Phase B: Immediate Post-Wipe Logcat
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_Logcat
+
+Strong evidence files:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_Logcat\01_logcat_full_dump_afterwipe.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_Logcat\04_logcat_hits_afterwipe.txt
+
+Key finding:
+- Immediate post-wipe logcat preserved exact file-path traces for files acted on by AndroidEraser.
+
+Observed trace pattern:
+- "Clearing DocumentFile: /storage/emulated/0/..."
+
+Examples recovered from logcat:
+- /storage/emulated/0/DCIM/Camera/WhatsApp Image 2026-05-11 at 16.16.41 (1).jpeg
+- /storage/emulated/0/DCIM/Screenshots/Screenshot 2026-05-11 162329.png
+- /storage/emulated/0/Documents/1-s2.0-S1742287606000673-main.pdf
+- /storage/emulated/0/Documents/Anti-forensics_techniques_An_analytical_review.pdf
+- /storage/emulated/0/Documents/Paper_27-Hex_Symbols_Algorithm_for_Anti_Forensic_Artifacts_on_Android_Devices.pdf
+- /storage/emulated/0/Documents/techniques_flat.xlsx
+- /storage/emulated/0/Documents/image-2026-03-21-073010.png
+- /storage/emulated/0/Download/download (1).jpg
+- /storage/emulated/0/Download/download.jpg
+- /storage/emulated/0/Download/images.jpg
+
+Interpretation:
+- Logcat directly ties the app to specific user files.
+- This is volatile evidence and was only preserved because the log buffer was dumped immediately after the wipe.
+
+Phase B: Post-Clean Logical Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_LogicalRun
+
+Counts:
+- recent_tasks: 1
+- snapshots: 3
+- recent_images: 0
+- usage_stats: 5
+- app_private_cache: 0
+- app_private_shared_prefs: 1
+- app_private_databases: 3
+- os_artifacts: 3
+
+Strongest artifact:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_LogicalRun\app_private_shared_prefs\com.cbinnovations.androideraser.xml
+
+Strong finding from shared_prefs:
+- The app preserved full wipe reports.
+- The report contains:
+  - job IDs
+  - start and end timestamps
+  - wipe method: DoD5220_22_ME
+  - pass count: mCycles=3
+  - success status
+  - total bytes
+  - per-file report entries by name
+
+Examples of filenames preserved in shared_prefs:
+- 1-s2.0-S1742287606000673-main.pdf
+- Anti-forensics_techniques_An_analytical_review.pdf
+- Paper_27-Hex_Symbols_Algorithm_for_Anti_Forensic_Artifacts_on_Android_Devices.pdf
+- techniques_flat.xlsx
+- image-2026-03-21-073010.png
+- download (1).jpg
+- download.jpg
+- images.jpg
+- Screenshot 2026-05-11 162329.png
+- WhatsApp Image 2026-05-11 at 16.16.41 (1).jpeg
+
+Important interpretation:
+- shared_prefs independently confirms the same cleaned file sets seen in logcat.
+- This is a strong recurring evidence source for AndroidEraser.
+
+Second strong artifact:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_LogicalRun\usage_stats\0\daily\1778720368768
+
+Strong finding from usage_stats:
+- package: com.cbinnovations.androideraser
+- appLaunchCount: 4
+- timeActive: 10315
+- activity sequence includes:
+  - com.cbinnovations.androideraser.Firstlaunch
+  - com.cbinnovations.androideraser.screen.DataScreen
+  - com.cbinnovations.androideraser.ExtendedFileManager
+
+Interpretation:
+- usage_stats provides the app-use timeline.
+- The presence of ExtendedFileManager supports that the app entered its file-selection workflow.
+
+Supporting artifact:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseB_PostClean_LogicalRun\recent_tasks\4_task.xml
+
+Supporting finding from recent_tasks:
+- real_activity="com.cbinnovations.androideraser/.Firstlaunch"
+- calling_package="com.cbinnovations.androideraser"
+
+OS-side database findings:
+- external.db preserved folder-level traces only in the query run:
+  - /storage/emulated/0/DCIM/Camera
+  - /storage/emulated/0/DCIM/Screenshots
+  - /storage/emulated/0/Documents
+  - /storage/emulated/0/Download
+- downloads.db did not preserve the deleted test set in the rows examined.
+- lastAccess.db was not useful in this run.
+
+Weak or low-value artifacts:
+- app_private_cache was empty
+- app_private_databases contained telemetry-style content only:
+  - com.google.android.datatransport.events
+  - com.google.android.datatransport.events-shm
+  - com.google.android.datatransport.events-wal
+
+Current conclusion after Phase B:
+- AndroidEraser left very strong logical evidence.
+- The strongest recurring evidence pattern so far is:
+  - immediate post-wipe logcat for exact file paths
+  - shared_prefs for exact cleaned filenames and wipe report metadata
+  - usage_stats for activity timeline
+  - recent_tasks as supporting app-presence evidence
+
+Phase C: Post-Uninstall Logical Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseC_PostUninstall_LogicalRun
+
+Uninstall status:
+- Package removed successfully.
+- Package check after uninstall: not present.
+
+Counts:
+- recent_tasks: 1
+- snapshots: 3
+- recent_images: 0
+- usage_stats: 5
+- app_private_cache: 0
+- app_private_shared_prefs: 0
+- app_private_databases: 0
+- os_artifacts: 3
+
+What was removed:
+- /data/data/com.cbinnovations.androideraser/cache no longer exists.
+- /data/data/com.cbinnovations.androideraser/shared_prefs no longer exists.
+- /data/data/com.cbinnovations.androideraser/databases no longer exists.
+
+Strong surviving artifact:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseC_PostUninstall_LogicalRun\usage_stats\0\daily\1778720368768
+
+Strong finding from Phase C usage_stats:
+- package com.cbinnovations.androideraser still persists after uninstall.
+- appLaunchCount remains 4.
+- timeActive remains 10315.
+- activity history still preserves:
+  - com.cbinnovations.androideraser.Firstlaunch
+  - com.cbinnovations.androideraser.screen.DataScreen
+  - com.cbinnovations.androideraser.ExtendedFileManager
+
+Interpretation:
+- Android usage history survived uninstall.
+- This preserves evidence that the app was used and that it entered the file-selection workflow.
+
+Supporting surviving artifact:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseC_PostUninstall_LogicalRun\recent_tasks\4_task.xml
+
+Supporting finding from Phase C recent_tasks:
+- The AndroidEraser recents task persisted after uninstall in this run.
+- The task still shows:
+  - real_activity="com.cbinnovations.androideraser/.Firstlaunch"
+  - calling_package="com.cbinnovations.androideraser"
+
+Snapshot note:
+- One snapshot image disappeared during pull after uninstall, which is a race condition artifact.
+- The surviving snapshot set still includes:
+  - 4.proto
+  - 4_reduced.jpg
+- 4.jpg is present as a zero-byte file in the capture because the remote file disappeared during transfer.
+
+Phase C conclusion:
+- App-private artifacts were removed by uninstall.
+- However, system-level traces still survive.
+- The strongest surviving Phase C evidence is:
+  - usage_stats for package and activity history
+  - recent_tasks for persisted app task metadata
+  - snapshots as supporting UI context
+
+Phase D: Post-Restart Logical Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseD_PostRestart_LogicalRun
+
+System state after reboot:
+- Root access restored successfully after reboot.
+- Package remained absent after reboot.
+
+Counts:
+- recent_tasks: 0
+- snapshots: 0
+- recent_images: 0
+- usage_stats: 5
+- app_private_cache: 0
+- app_private_shared_prefs: 0
+- app_private_databases: 0
+- os_artifacts: 3
+
+Strong surviving artifact:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2\PhaseD_PostRestart_LogicalRun\usage_stats\0\daily\1778720368768
+
+Strong finding from Phase D usage_stats:
+- package com.cbinnovations.androideraser still persists after reboot.
+- appLaunchCount remains 4.
+- timeActive remains 10315.
+- activity history still preserves:
+  - com.cbinnovations.androideraser.Firstlaunch
+  - com.cbinnovations.androideraser.screen.DataScreen
+  - com.cbinnovations.androideraser.ExtendedFileManager
+
+Interpretation:
+- usage_stats remained stable across uninstall and reboot.
+- This makes usage_stats the strongest long-term surviving system-level artifact for this AndroidEraser run.
+
+What did not survive Phase D:
+- recent_tasks: cleared by reboot
+- snapshots: cleared by reboot
+- recent_images: cleared by reboot
+- app-private data: absent
+
+Phase D conclusion:
+- After reboot, the only strong surviving app-specific logical evidence is usage_stats.
+- This is weaker than Phase B shared_prefs and immediate logcat for file-level detail, but stronger than nothing because it still preserves package and activity history after uninstall and reboot.
+
+Current overall conclusion after Phase D:
+- Best Phase B evidence:
+  - immediate post-wipe logcat for exact file paths
+  - shared_prefs for exact file names and wipe report metadata
+- Best post-uninstall and post-restart evidence:
+  - usage_stats for package persistence and activity timeline
+- Supporting evidence families:
+  - recent_tasks and snapshots in Phase B and Phase C
+  - folder-level MediaProvider traces in external.db
+
+Static Analysis Correlation
+===========================
+Primary static-analysis source:
+- C:\AndroidForensicsProject\CleanerScope\static analysis findings\andrioderaser\Static_Analysis_Findings.txt
+
+Critical correction and strengthening:
+- The strongest recovered method-bearing artifact in our actual rooted Phase B pull was:
+  - C:\AndroidForensicsProject\CleanerScope\captures\AndriodEraser\AndroidEraser2\PhaseB_PostClean_LogicalRun\app_private_shared_prefs\com.cbinnovations.androideraser.xml
+  - key: savekey_reports
+
+What savekey_reports preserved in our actual pull:
+- method object:
+  - mValue = DoD5220_22_ME
+  - mCycles = 3
+  - mPattern = [[53],[202],[-1]]
+- timestamps:
+  - startTime
+  - endTime
+- totals:
+  - totalBytes
+  - success
+  - errors
+- per-file report entries in reportDetail
+
+Static-analysis interpretation:
+- Android Eraser genuinely implements multiple named methods.
+- The recovered method in this experiment maps directly to:
+  - DoD 5220.22-M (E)
+  - 3 passes
+  - 0x35, 0xCA, random
+- The core direct-file write path uses RandomAccessFile("rws"), which is one of the stronger write-synchronization implementations in the app set.
+- Static analysis also shows that the app stores full report objects in shared preferences, which matches what we recovered dynamically.
+
+Updated app-specific conclusion:
+- Android Eraser is one of the strongest apps in the study for method recovery.
+- The selected wipe method was recoverable directly from the rooted Phase B report-bearing shared-preference artifact.
+- The app also preserved strong structured report metadata including timestamps, bytes written, success state, and per-file entries.
