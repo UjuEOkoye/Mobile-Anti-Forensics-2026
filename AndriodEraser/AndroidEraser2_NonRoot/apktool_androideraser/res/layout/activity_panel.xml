@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent" android:animateLayoutChanges="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:sothree="http://schemas.android.com/apk/res-auto">
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout android:gravity="bottom" android:id="@id/mSlidingUpPanelLayout" android:layout_width="match_parent" android:layout_height="match_parent" sothree:umanoAnchorPoint="1.0" sothree:umanoInitialState="collapsed" sothree:umanoOverlay="false" sothree:umanoPanelHeight="0.0dp" sothree:umanoShadowHeight="4.0dp">
+        <include android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/activity_main" />
+        <include android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/activity_slider" />
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</RelativeLayout>

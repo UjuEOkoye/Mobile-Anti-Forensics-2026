@@ -1,0 +1,8 @@
+  * Recent #1: TaskRecord{10059d8 #4 A=com.cbinnovations.androideraser U=0 StackId=-1 sz=0}
+    userId=0 effectiveUid=u0a86 mCallingUid=u0a86 mUserSetupComplete=true mCallingPackage=com.cbinnovations.androideraser
+    affinity=com.cbinnovations.androideraser
+    intent={act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.cbinnovations.androideraser/.Firstlaunch}
+    realActivity=com.cbinnovations.androideraser/.Firstlaunch
+  * Recent #2: TaskRecord{b8eca8f #1 I=com.android.settings/.FallbackHome U=0 StackId=-1 sz=0}
+    intent={act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.android.settings/.FallbackHome}
+    realActivity=com.android.settings/.FallbackHome

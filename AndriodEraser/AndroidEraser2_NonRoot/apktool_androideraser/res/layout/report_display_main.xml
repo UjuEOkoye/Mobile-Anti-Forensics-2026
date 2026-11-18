@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dp" android:layout_marginRight="8.0dp" android:layout_marginBottom="8.0dp" android:layout_marginStart="8.0dp" android:layout_marginEnd="8.0dp" app:cardBackgroundColor="@color/colorPrimary" app:cardCornerRadius="@dimen/corner_radius" app:cardElevation="5.0dp" app:cardUseCompatPadding="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/mRecyclerView" android:layout_width="match_parent" android:layout_height="match_parent" android:overScrollMode="never" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

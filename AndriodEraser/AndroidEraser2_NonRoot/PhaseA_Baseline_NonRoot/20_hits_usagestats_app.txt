@@ -1,0 +1,14 @@
+    time="2026-05-13 20:44:00" type=MOVE_TO_FOREGROUND package=com.android.settings class=com.android.settings.FallbackHome flags=0x0 
+    time="2026-05-13 20:44:07" type=MOVE_TO_BACKGROUND package=com.android.settings class=com.android.settings.FallbackHome flags=0x0 
+      package=com.android.settings totalTime="00:07" lastTime="2026-05-13 20:44:07" appLaunchCount=1 
+      package=com.android.settings 
+      package=com.android.settings totalTime="00:07" lastTime="2026-05-13 20:44:07" appLaunchCount=1 
+      package=com.android.settings 
+      package=com.android.settings totalTime="00:07" lastTime="2026-05-13 20:44:07" appLaunchCount=1 
+      package=com.android.settings 
+      package=com.android.settings totalTime="00:07" lastTime="2026-05-13 20:44:07" appLaunchCount=1 
+      package=com.android.settings 
+    package=com.android.settings.intelligence u=0 bucket=10 reason=u-su used=+44d23h19m44s81ms usedScr=+3m45s324ms lastPred=+44d23h19m44s81ms activeLeft=-1d17h4m13s69ms wsLeft=-44d23h19m6s876ms lastJob=-24855d3h14m7s932ms idle=n
+    package=com.android.providers.settings u=0 bucket=10 reason=u-su used=+44d23h19m44s81ms usedScr=+3m45s324ms lastPred=+44d23h19m44s81ms activeLeft=-1d17h4m13s69ms wsLeft=-44d23h19m6s876ms lastJob=-24855d3h14m7s932ms idle=n
+    package=com.android.settings u=0 bucket=10 reason=u-su used=+44d23h19m44s81ms usedScr=+3m45s324ms lastPred=+44d23h19m44s81ms activeLeft=-1d17h4m13s69ms wsLeft=-44d23h19m6s876ms lastJob=-24855d3h14m7s932ms idle=n
+Settings:

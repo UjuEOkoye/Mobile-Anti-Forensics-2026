@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="25.0dp" android:paddingTop="2.5dp" android:paddingRight="25.0dp" android:paddingBottom="2.5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="25.0dp" android:paddingEnd="25.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/summary_num" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_toStartOf="@id/summary_num" android:layout_alignParentStart="true">
+        <TextView android:textColor="@color/colorPrimary" android:id="@id/mTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Title" style="@style/TextAppearance.AppCompat.Small" />
+        <TextView android:textSize="10.0sp" android:id="@id/mSubTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Subtitle" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/summary_num" android:background="@drawable/button_main_enabled" android:padding="5.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:minWidth="25.0dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginStart="10.0dp" android:layout_alignParentEnd="true">
+        <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:id="@id/mContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

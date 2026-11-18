@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="wrap_content" android:layout_height="20.0dp" android:src="@mipmap/ic_attach_money_black_48dp" android:adjustViewBounds="true" android:tint="@color/green" android:contentDescription="@null" android:alpha="0.5" />
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:layout_weight="1.0" android:layout_marginStart="10.0dp">
+            <TextView android:textSize="16.0sp" android:textColor="@color/colorPrimary" android:id="@id/mTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Title" />
+            <TextView android:textSize="12.0sp" android:id="@id/mSubTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Subtitle" />
+        </LinearLayout>
+        <RelativeLayout android:background="@drawable/view_inapp" android:padding="7.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:minWidth="25.0dp" android:layout_marginStart="10.0dp">
+            <TextView android:textColor="@android:color/white" android:id="@id/mContent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:id="@id/divider" android:background="@color/tint" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:alpha="0.3" android:layout_marginStart="10.0dp" android:layout_marginEnd="10.0dp" />
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:icon="@mipmap/ic_sort_name" android:id="@id/action_sort_name" android:title="@string/name" android:checkable="true" app:showAsAction="ifRoom" />
+        <item android:icon="@mipmap/ic_type" android:id="@id/action_sort_type" android:title="@string/type" android:checkable="true" app:showAsAction="ifRoom" />
+        <item android:icon="@mipmap/ic_sort_time" android:id="@id/action_sort_modified" android:title="@string/last_modified" android:checkable="true" app:showAsAction="ifRoom" />
+        <item android:icon="@mipmap/ic_sort_size" android:id="@id/action_sort_size" android:title="@string/size" android:checkable="true" app:showAsAction="ifRoom" />
+    </group>
+</menu>

@@ -1,0 +1,46 @@
+    time="2026-05-13 20:44:00" type=MOVE_TO_FOREGROUND package=com.android.settings class=com.android.settings.FallbackHome flags=0x0 
+    time="2026-05-13 20:44:07" type=MOVE_TO_BACKGROUND package=com.android.settings class=com.android.settings.FallbackHome flags=0x0 
+    time="2026-05-13 21:01:02" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.Firstlaunch flags=0x0 
+    time="2026-05-13 21:01:07" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.Firstlaunch flags=0x0 
+    time="2026-05-13 21:01:07" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.screen.DataScreen flags=0x0 
+    time="2026-05-13 21:01:17" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.screen.DataScreen flags=0x0 
+    time="2026-05-13 21:01:19" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.screen.DataScreen flags=0x0 
+    time="2026-05-13 21:01:19" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.screen.DataScreen flags=0x0 
+    time="2026-05-13 21:01:19" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.ExtendedFileManager flags=0x0 
+    time="2026-05-13 21:01:37" type=NOTIFICATION_SEEN package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:01:38" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.ExtendedFileManager flags=0x0 
+    time="2026-05-13 21:01:39" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.ExtendedFileManager flags=0x0 
+    time="2026-05-13 21:01:56" type=NOTIFICATION_SEEN package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:01:57" type=NOTIFICATION_SEEN package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:02:21" type=NOTIFICATION_SEEN package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:02:22" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.ExtendedFileManager flags=0x0 
+    time="2026-05-13 21:02:23" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.ExtendedFileManager flags=0x0 
+    time="2026-05-13 21:02:40" type=NOTIFICATION_SEEN package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:02:53" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.ExtendedFileManager flags=0x0 
+    time="2026-05-13 21:02:53" type=MOVE_TO_FOREGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.screen.DataScreen flags=0x0 
+    time="2026-05-13 21:02:54" type=MOVE_TO_BACKGROUND package=com.cbinnovations.androideraser class=com.cbinnovations.androideraser.screen.DataScreen flags=0x0 
+    time="2026-05-13 21:02:55" type=NOTIFICATION_INTERRUPTION package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:03:06" type=NOTIFICATION_SEEN package=com.cbinnovations.androideraser flags=0x0 
+    time="2026-05-13 21:14:52" type=MOVE_TO_FOREGROUND package=com.android.settings class=com.android.settings.FallbackHome flags=0x0 
+    time="2026-05-13 21:15:00" type=MOVE_TO_BACKGROUND package=com.android.settings class=com.android.settings.FallbackHome flags=0x0 
+      package=com.cbinnovations.androideraser totalTime="00:30" lastTime="2026-05-13 21:03:06" appLaunchCount=4 
+      package=com.android.settings totalTime="00:14" lastTime="2026-05-13 21:15:00" appLaunchCount=2 
+      package=com.cbinnovations.androideraser 
+      package=com.android.settings 
+      package=com.cbinnovations.androideraser totalTime="00:30" lastTime="2026-05-13 21:03:06" appLaunchCount=4 
+      package=com.android.settings totalTime="00:14" lastTime="2026-05-13 21:15:00" appLaunchCount=2 
+      package=com.cbinnovations.androideraser 
+      package=com.android.settings 
+      package=com.cbinnovations.androideraser totalTime="00:30" lastTime="2026-05-13 21:03:06" appLaunchCount=4 
+      package=com.android.settings totalTime="00:14" lastTime="2026-05-13 21:15:00" appLaunchCount=2 
+      package=com.cbinnovations.androideraser 
+      package=com.android.settings 
+      package=com.cbinnovations.androideraser totalTime="00:30" lastTime="2026-05-13 21:03:06" appLaunchCount=4 
+      package=com.android.settings totalTime="00:14" lastTime="2026-05-13 21:15:00" appLaunchCount=2 
+      package=com.cbinnovations.androideraser 
+      package=com.android.settings 
+    package=com.android.settings.intelligence u=0 bucket=10 reason=u-su used=+44d23h37m17s794ms usedScr=+1m18s440ms lastPred=+44d23h37m17s794ms activeLeft=-1d17h21m46s782ms wsLeft=-44d23h36m40s589ms lastJob=-24855d3h14m7s219ms idle=n
+    package=com.android.providers.settings u=0 bucket=10 reason=u-su used=+44d23h37m17s794ms usedScr=+1m18s440ms lastPred=+44d23h37m17s794ms activeLeft=-1d17h21m46s782ms wsLeft=-44d23h36m40s589ms lastJob=-24855d3h14m7s219ms idle=n
+    package=com.cbinnovations.androideraser u=0 bucket=50 reason=d used=+2m43s489ms usedScr=-17m17s108ms lastPred=+20m49s490ms activeLeft=-44d23h36m40s589ms wsLeft=-44d23h36m40s589ms lastJob=+51s434ms idle=y
+    package=com.android.settings u=0 bucket=10 reason=u-su used=+44d23h37m17s794ms usedScr=+1m18s440ms lastPred=+44d23h37m17s794ms activeLeft=-1d17h21m46s782ms wsLeft=-44d23h36m40s589ms lastJob=-24855d3h14m7s219ms idle=n
+Settings:

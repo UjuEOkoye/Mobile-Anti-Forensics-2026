@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<usagestats version="1" endTime="4152482">
+    <interactive count="0" time="0" />
+    <non-interactive count="0" time="0" />
+    <keyguard-shown count="0" time="0" />
+    <keyguard-hidden count="0" time="0" />
+    <packages>
+        <package lastTimeActive="-1778720368768" package="com.google.android.ext.services" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.providers.telephony" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.google.android.googlequicksearchbox" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.providers.media" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.providers.downloads" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.defcontainer" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="3251728" package="com.cbinnovations.androideraser" timeActive="10315" lastEvent="1" appLaunchCount="4" />
+        <package lastTimeActive="-1778720368768" package="com.android.se" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="3077675" package="com.google.android.packageinstaller" timeActive="3909" lastEvent="2" appLaunchCount="1" />
+        <package lastTimeActive="-1778720368768" package="com.google.android.gms" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.google.android.gsf" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="3248305" package="com.google.android.apps.nexuslauncher" timeActive="3067114" lastEvent="2" appLaunchCount="2" />
+        <package lastTimeActive="-1778720368768" package="com.android.smspush" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.phone" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.providers.blockednumber" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.providers.userdictionary" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.systemui" timeActive="0" lastEvent="0" />
+        <package lastTimeActive="-1778720368768" package="com.android.providers.contacts" timeActive="0" lastEvent="0" />
+    </packages>
+    <configurations>
+        <config lastTimeActive="0" timeActive="0" count="1" active="true" fs="1065353216" mcc="310" mnc="260" locales="en-US" touch="3" key="2" keyHid="1" hardKeyHid="1" nav="1" navHid="2" ori="1" scrLay="268435810" clrMod="5" ui="17" width="392" height="735" sw="392" density="440" />
+    </configurations>
+    <event-log>
+        <event time="3064394" package="com.google.android.apps.nexuslauncher" class="com.google.android.apps.nexuslauncher.NexusLauncherActivity" flags="0" type="2" />
+        <event time="3064608" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.Firstlaunch" flags="0" type="1" />
+        <event time="3069304" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.Firstlaunch" flags="0" type="2" />
+        <event time="3069311" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.screen.DataScreen" flags="0" type="1" />
+        <event time="3073685" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.screen.DataScreen" flags="0" type="2" />
+        <event time="3073766" package="com.google.android.packageinstaller" class="com.android.packageinstaller.permission.ui.GrantPermissionsActivity" flags="0" type="1" />
+        <event time="3077675" package="com.google.android.packageinstaller" class="com.android.packageinstaller.permission.ui.GrantPermissionsActivity" flags="0" type="2" />
+        <event time="3077688" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.screen.DataScreen" flags="0" type="1" />
+        <event time="3077713" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.screen.DataScreen" flags="0" type="2" />
+        <event time="3077731" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.ExtendedFileManager" flags="0" type="1" />
+        <event time="3175965" package="com.cbinnovations.androideraser" flags="0" type="10" />
+        <event time="3201898" package="com.cbinnovations.androideraser" flags="0" type="10" />
+        <event time="3202573" package="com.cbinnovations.androideraser" flags="0" type="10" />
+        <event time="3202769" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.ExtendedFileManager" flags="0" type="2" />
+        <event time="3202789" package="com.google.android.apps.nexuslauncher" class="com.google.android.apps.nexuslauncher.NexusLauncherActivity" flags="0" type="1" />
+        <event time="3204234" package="com.google.android.apps.nexuslauncher" class="com.google.android.apps.nexuslauncher.NexusLauncherActivity" flags="0" type="2" />
+        <event time="3204273" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.ExtendedFileManager" flags="0" type="1" />
+        <event time="3223045" package="com.cbinnovations.androideraser" flags="0" type="10" />
+        <event time="3245986" package="com.cbinnovations.androideraser" flags="0" type="10" />
+        <event time="3247010" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.ExtendedFileManager" flags="0" type="2" />
+        <event time="3247030" package="com.google.android.apps.nexuslauncher" class="com.google.android.apps.nexuslauncher.NexusLauncherActivity" flags="0" type="1" />
+        <event time="3248305" package="com.google.android.apps.nexuslauncher" class="com.google.android.apps.nexuslauncher.NexusLauncherActivity" flags="0" type="2" />
+        <event time="3248356" package="com.cbinnovations.androideraser" class="com.cbinnovations.androideraser.ExtendedFileManager" flags="0" type="1" />
+        <event time="3251728" package="com.cbinnovations.androideraser" flags="0" type="12" />
+    </event-log>
+</usagestats>

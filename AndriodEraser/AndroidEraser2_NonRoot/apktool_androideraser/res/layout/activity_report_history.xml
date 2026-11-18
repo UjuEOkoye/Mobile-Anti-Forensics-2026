@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/empty" android:background="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:layout_gravity="center" android:padding="6.0dp" android:layout_width="50.0dp" android:layout_height="wrap_content" android:src="@mipmap/settings_report" android:adjustViewBounds="true" android:tint="@color/colorPrimary" android:contentDescription="@null" />
+        <TextView android:textColor="@color/colorPrimary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_reports" android:alpha="0.6" />
+    </LinearLayout>
+    <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView android:id="@id/mRecyclerView" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:overScrollMode="ifContentScrolls" app:fastScrollPopupBgColor="@color/colorAccent" app:fastScrollPopupTextColor="@android:color/primary_text_dark" app:fastScrollThumbColor="@color/colorAccent" app:fastScrollTrackColor="@android:color/transparent" app:fastScrollVerticalThumbDrawable="@drawable/thumb" />
+</RelativeLayout>

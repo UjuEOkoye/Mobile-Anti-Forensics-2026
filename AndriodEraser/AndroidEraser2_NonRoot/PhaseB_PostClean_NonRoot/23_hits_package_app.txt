@@ -1,0 +1,39 @@
+Activity Resolver Table:
+        3c53125 com.cbinnovations.androideraser/.Firstlaunch filter f1f1f3e
+Receiver Resolver Table:
+        78d62fa com.cbinnovations.androideraser/androidx.profileinstaller.ProfileInstallReceiver filter ea2ac0
+        78d62fa com.cbinnovations.androideraser/androidx.profileinstaller.ProfileInstallReceiver filter 69195f2
+        78d62fa com.cbinnovations.androideraser/androidx.profileinstaller.ProfileInstallReceiver filter 2d8c443
+        78d62fa com.cbinnovations.androideraser/androidx.profileinstaller.ProfileInstallReceiver filter d3ae3f9
+  Permission [com.cbinnovations.androideraser.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION] (2b780ab):
+    sourcePackage=com.cbinnovations.androideraser
+    perm=Permission{981308 com.cbinnovations.androideraser.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION}
+    packageSetting=PackageSetting{6bcbaa1 com.cbinnovations.androideraser/10086}
+Registered ContentProviders:
+  com.cbinnovations.androideraser/androidx.startup.InitializationProvider:
+    Provider{8beb4c6 com.cbinnovations.androideraser/androidx.startup.InitializationProvider}
+  com.cbinnovations.androideraser/androidx.core.content.FileProvider:
+    Provider{b6b7c87 com.cbinnovations.androideraser/androidx.core.content.FileProvider}
+ContentProvider Authorities:
+  [com.cbinnovations.androideraser.androidx-startup]:
+    Provider{8beb4c6 com.cbinnovations.androideraser/androidx.startup.InitializationProvider}
+      applicationInfo=ApplicationInfo{41f57b4 com.cbinnovations.androideraser}
+  [com.cbinnovations.androideraser.provider]:
+    Provider{b6b7c87 com.cbinnovations.androideraser/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{41f57b4 com.cbinnovations.androideraser}
+  [com.cbinnovations.androideraser]
+  Package [com.cbinnovations.androideraser] (6bcbaa1):
+    pkg=Package{7495fdd com.cbinnovations.androideraser}
+    codePath=/data/app/com.cbinnovations.androideraser-SA7pNyDixeomTTHeKpGQBA==
+    resourcePath=/data/app/com.cbinnovations.androideraser-SA7pNyDixeomTTHeKpGQBA==
+    legacyNativeLibraryDir=/data/app/com.cbinnovations.androideraser-SA7pNyDixeomTTHeKpGQBA==/lib
+    applicationInfo=ApplicationInfo{41f57b4 com.cbinnovations.androideraser}
+    dataDir=/data/user/0/com.cbinnovations.androideraser
+      com.cbinnovations.androideraser.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: prot=signature, INSTALLED
+    requested permissions:
+      com.cbinnovations.androideraser.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+      com.cbinnovations.androideraser.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION: granted=true
+    seq=4, package=com.cbinnovations.androideraser
+  [com.cbinnovations.androideraser]
+    path: /data/app/com.cbinnovations.androideraser-SA7pNyDixeomTTHeKpGQBA==/base.apk
+  [com.cbinnovations.androideraser]

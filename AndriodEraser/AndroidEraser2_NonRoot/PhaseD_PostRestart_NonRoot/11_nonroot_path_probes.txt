@@ -1,0 +1,21 @@
+
+>>> ls -la /data/system/usagestats
+ls: /data/system/usagestats: Permission denied
+
+>>> ls -la /data/system/usagestats/0
+ls: /data/system/usagestats/0: Permission denied
+
+>>> ls -la /data/system_ce/0/recent_tasks
+ls: /data/system_ce/0/recent_tasks: Permission denied
+
+>>> ls -la /data/system_ce/0/recent_images
+ls: /data/system_ce/0/recent_images: Permission denied
+
+>>> ls -la /data/system_ce/0/snapshots
+ls: /data/system_ce/0/snapshots: Permission denied
+
+>>> ls -la /data/data/com.cbinnovations.androideraser
+ls: /data/data/com.cbinnovations.androideraser: No such file or directory
+
+>>> ls -la /data/user/0/com.cbinnovations.androideraser
+ls: /data/user/0/com.cbinnovations.androideraser: No such file or directory

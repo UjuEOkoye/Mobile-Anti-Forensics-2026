@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="Firstlaunch" value="true" />
+    <string name="cb_limit_object">{&quot;amount&quot;:44355489,&quot;date&quot;:&quot;13052026&quot;}</string>
+</map>

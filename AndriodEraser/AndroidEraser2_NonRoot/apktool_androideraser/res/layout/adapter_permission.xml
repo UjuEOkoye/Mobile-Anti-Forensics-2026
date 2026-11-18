@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="25.0dp" android:paddingTop="10.0dp" android:paddingRight="25.0dp" android:paddingBottom="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="25.0dp" android:paddingEnd="25.0dp">
+        <TextView android:textSize="16.0sp" android:textColor="@color/colorPrimaryDark" android:ellipsize="middle" android:id="@id/mTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Title" android:singleLine="true" />
+        <TextView android:textSize="10.0sp" android:textColor="@color/colorPrimaryDark" android:ellipsize="end" android:id="@id/mSubTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Subtitle" android:maxLines="2" android:alpha="0.7" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="@color/green" android:contentDescription="@null" />
+    </LinearLayout>
+    <View android:id="@id/divider" android:background="@color/tint" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:alpha="0.3" android:layout_marginStart="10.0dp" android:layout_marginEnd="10.0dp" />
+</LinearLayout>

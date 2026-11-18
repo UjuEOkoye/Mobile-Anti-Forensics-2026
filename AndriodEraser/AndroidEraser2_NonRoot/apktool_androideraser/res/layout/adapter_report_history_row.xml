@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?selectableItemBackground" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/layout_checkbox" android:focusable="true" android:clickable="true" android:layout_width="35.0dp" android:layout_height="match_parent" android:layout_marginLeft="10.0dp" android:layout_marginStart="10.0dp">
+            <CheckBox android:id="@id/checkbox" android:focusable="false" android:layout_width="32.0dp" android:layout_height="32.0dp" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:padding="15.0dp" android:layout_width="match_parent" android:layout_height="64.5dp">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dp" android:layout_toLeftOf="@id/info_row" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_marginEnd="10.0dp" android:layout_toStartOf="@id/info_row" android:layout_alignParentStart="true">
+                <TextView android:textSize="16.0sp" android:textColor="@color/colorPrimaryDark" android:ellipsize="middle" android:id="@id/title_row" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Title" android:singleLine="true" />
+                <TextView android:textSize="10.0sp" android:textColor="@color/colorPrimaryDark" android:ellipsize="end" android:id="@id/subtitle_row" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Subtitle" android:maxLines="1" android:alpha="0.7" />
+            </LinearLayout>
+            <TextView android:textColor="@color/colorAccent" android:ellipsize="end" android:gravity="end" android:id="@id/info_row" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dp" android:text="XY" android:maxLines="1" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginStart="10.0dp" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:id="@id/divider" android:background="@color/tint" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginLeft="10.0dp" android:layout_marginRight="10.0dp" android:alpha="0.3" android:layout_marginStart="10.0dp" android:layout_marginEnd="10.0dp" />
+</LinearLayout>

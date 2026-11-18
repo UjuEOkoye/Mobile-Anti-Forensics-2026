@@ -1,0 +1,3 @@
+  * Recent #1: TaskRecord{7647e82 #1 I=com.android.settings/.FallbackHome U=0 StackId=-1 sz=0}
+    intent={act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.android.settings/.FallbackHome}
+    realActivity=com.android.settings/.FallbackHome

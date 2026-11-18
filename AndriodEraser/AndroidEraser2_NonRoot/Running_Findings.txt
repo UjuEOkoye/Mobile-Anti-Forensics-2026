@@ -1,0 +1,299 @@
+﻿AndroidEraser2 Non-Root Running Findings
+Date: 2026-05-13
+App:
+- Package: com.cbinnovations.androideraser
+- APK used: C:\AndroidForensicsProject\CleanerScope\apks\androideraser\xapk_extract\com.cbinnovations.androideraser.apk
+
+Purpose
+- This file is a running experiment note for the non-root AndroidEraser run.
+- It is updated phase by phase so findings are preserved during collection.
+
+Acquisition Mode
+- Non-root acquisition.
+- Primary sources are dumpsys outputs and adb backup attempts.
+- Direct access to protected /data paths is expected to be denied without root.
+
+Important Non-Root Sources
+- adb shell dumpsys usagestats
+- adb shell dumpsys activity recents
+- adb shell dumpsys activity activities
+- adb shell dumpsys package com.cbinnovations.androideraser
+- adb shell dumpsys procstats
+- adb shell dumpsys meminfo com.cbinnovations.androideraser
+- adb shell dumpsys batterystats
+- adb backup -noapk com.cbinnovations.androideraser
+
+Phase A: Baseline Non-Root Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseA_Baseline_NonRoot
+
+Context:
+- shell user: shell
+- test dataset was present on shared storage before wipe.
+- app installed successfully before acquisition.
+
+Collected artifacts:
+- 01_dumpsys_usagestats.txt
+- 02_dumpsys_activity_recents.txt
+- 03_dumpsys_activity_activities.txt
+- 04_dumpsys_package_app.txt
+- 05_dumpsys_package_packages.txt
+- 06_dumpsys_procstats.txt
+- 07_dumpsys_meminfo_app.txt
+- 08_dumpsys_batterystats.txt
+- 09_dumpsys_activity_processes.txt
+- 10_dumpsys_activity_starter.txt
+- 11_nonroot_path_probes.txt
+- focused hit files 20 through 23
+
+Phase A findings so far:
+- Non-root dumpsys collection completed successfully.
+- This branch is usable for app-use and package-history evidence.
+
+Path access result:
+- Direct access probes to protected /data paths were collected in:
+  - C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseA_Baseline_NonRoot\11_nonroot_path_probes.txt
+- These probes are expected to document access denial or inaccessible protected paths under shell user.
+
+adb backup result:
+- Backup target:
+  - C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseA_Baseline_NonRoot\androideraser_nonroot.ab
+- Result:
+  - 0 bytes
+- Interpretation:
+  - Even after user confirmation on the emulator screen, adb backup did not produce usable app data in this run.
+  - For this Phase A non-root run, dumpsys is usable and adb backup is not usable.
+
+Current conclusion after Phase A:
+- The non-root AndroidEraser branch is active and documented.
+- The strongest expected evidence families for this branch are likely to be dumpsys-based rather than adb backup-based.
+- Phase B post-wipe collection still needs to be performed.
+
+Phase B: Post-Clean Non-Root Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot
+
+Context:
+- shell user remained non-root during acquisition.
+- App was still installed during this capture.
+
+Strong evidence files:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\20_hits_usagestats_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\21_hits_recents_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\23_hits_package_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\25_hits_procstats_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\26_hits_batterystats_app.txt
+
+Strong finding from dumpsys usagestats:
+- package com.cbinnovations.androideraser is clearly present.
+- activity sequence is visible, including:
+  - Firstlaunch
+  - screen.DataScreen
+  - ExtendedFileManager
+- notification events are also visible.
+- summary values include:
+  - totalTime 00:30
+  - lastTime 2026-05-13 21:03:06
+  - appLaunchCount 4
+
+Interpretation:
+- Non-root usage history is strong for proving app use and the file-selection workflow.
+- ExtendedFileManager is especially important because it indicates the app entered its file-management stage.
+
+Strong finding from dumpsys activity recents:
+- Recent task still preserves the app as:
+  - realActivity=com.cbinnovations.androideraser/.Firstlaunch
+  - mCallingPackage=com.cbinnovations.androideraser
+
+Interpretation:
+- Non-root recents still provide direct app-presence evidence while the app remains installed.
+
+Strong finding from dumpsys package:
+- The package record is present and exposes:
+  - Package [com.cbinnovations.androideraser]
+  - codePath
+  - resourcePath
+  - dataDir=/data/user/0/com.cbinnovations.androideraser
+  - exported/provider and permission metadata
+
+Interpretation:
+- Package metadata is visible without root while the app is installed.
+- This is useful for package presence and structure, but not for deleted-file detail.
+
+Strong finding from dumpsys procstats:
+- procstats preserves repeated process entries for:
+  - com.cbinnovations.androideraser / u0a86 / v1500
+
+Strong finding from dumpsys batterystats:
+- batterystats preserves install and runtime history, including:
+  - pkginst=1500:"com.cbinnovations.androideraser"
+  - top/fg/job traces for the package
+  - JobInfoSchedulerService traces
+  - ShredderNotificationService trace
+
+Interpretation:
+- batterystats is valuable for historical app-runtime evidence in the non-root branch.
+
+Important limitation of Phase B non-root:
+- No exact user file names or full file paths were recovered from the non-root dumpsys outputs in this capture summary.
+- This differs from rooted Phase B logcat and rooted Phase B shared_prefs, which did preserve exact cleaned file names and file paths.
+
+Current conclusion after non-root Phase B:
+- Strongest non-root evidence sources for AndroidEraser so far are:
+  - dumpsys usagestats
+  - dumpsys activity recents
+  - dumpsys package
+  - dumpsys procstats
+  - dumpsys batterystats
+- adb backup remains non-usable in this run.
+- Non-root evidence is strong for app use and workflow reconstruction, but weaker than rooted evidence for exact file-level attribution.
+
+Phase B adb backup result:
+- Backup file:
+  - C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\androideraser_nonroot.ab
+- Backup size:
+  - 5565 bytes
+- Backup unpacked tar:
+  - C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\androideraser_nonroot.tar
+- Unpacked extract folder:
+  - C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseB_PostClean_NonRoot\adb_backup_extract
+
+What the Phase B backup contained:
+- apps/com.cbinnovations.androideraser/_manifest
+- apps/com.cbinnovations.androideraser/f/profileInstalled
+- apps/com.cbinnovations.androideraser/f/profileinstaller_profileWrittenFor_lastUpdateTime.dat
+- apps/com.cbinnovations.androideraser/db/com.google.android.datatransport.events
+- apps/com.cbinnovations.androideraser/db/com.google.android.datatransport.events-shm
+- apps/com.cbinnovations.androideraser/db/com.google.android.datatransport.events-wal
+- apps/com.cbinnovations.androideraser/sp/com.cbinnovations.androideraser.xml
+
+What the extracted shared_prefs XML contained in this backup:
+- Firstlaunch=true
+- cb_limit_object JSON value
+
+Important interpretation:
+- The Phase B non-root adb backup is not empty.
+- It does contain real AndroidEraser app-private content.
+- However, in this backup extract, the shared_prefs content currently visible is minimal and does not contain the rich wipe-report data that was present in the rooted logical shared_prefs pull.
+- So this Phase B adb backup is forensically relevant, but weaker than the rooted logical Phase B shared_prefs artifact.
+
+Current backup conclusion:
+- Phase A non-root backup: empty and not usable.
+- Phase B non-root backup: non-empty and usable, but currently appears to expose only limited app-private content.
+
+Phase C: Post-Uninstall Non-Root Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseC_PostUninstall_NonRoot
+
+Context:
+- App uninstall completed before acquisition.
+- Package check after uninstall: not present.
+- shell user remained non-root during acquisition.
+
+Strong surviving evidence files:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseC_PostUninstall_NonRoot\20_hits_usagestats_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseC_PostUninstall_NonRoot\25_hits_procstats_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseC_PostUninstall_NonRoot\26_hits_batterystats_app.txt
+
+Strong finding from Phase C usagestats:
+- package com.cbinnovations.androideraser still persists after uninstall.
+- activity history still shows:
+  - Firstlaunch
+  - screen.DataScreen
+  - ExtendedFileManager
+- summary values still show:
+  - totalTime 00:30
+  - lastTime 2026-05-13 21:03:06
+  - appLaunchCount 4
+
+Interpretation:
+- Non-root usage history survives uninstall and remains one of the strongest app-history sources.
+
+Strong finding from Phase C procstats:
+- Process history for com.cbinnovations.androideraser still persists after uninstall.
+
+Strong finding from Phase C batterystats:
+- Historical runtime and lifecycle traces still persist, including:
+  - pkginst=1500:"com.cbinnovations.androideraser"
+  - pkgunin=0:"com.cbinnovations.androideraser"
+  - top/fg/job traces for the app
+
+Interpretation:
+- batterystats is a strong non-root persistence source after uninstall.
+- It captures both install and uninstall history for the package.
+
+What no longer survives the same way:
+- recents no longer preserve the AndroidEraser task in the focused output.
+- package metadata now reports the package as absent.
+- 23_hits_package_app.txt shows:
+  - Unable to find package: com.cbinnovations.androideraser
+
+Phase C conclusion:
+- After uninstall, the strongest non-root evidence families are:
+  - dumpsys usagestats
+  - dumpsys procstats
+  - dumpsys batterystats
+- recents and installed-package metadata are weaker or absent after uninstall.
+
+Phase D: Post-Restart Non-Root Run
+Capture folder:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseD_PostRestart_NonRoot
+
+Context:
+- Device reboot completed before acquisition.
+- App remained uninstalled after reboot.
+- shell user remained non-root during acquisition.
+
+Strong surviving evidence files:
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseD_PostRestart_NonRoot\20_hits_usagestats_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseD_PostRestart_NonRoot\25_hits_procstats_app.txt
+- C:\AndroidForensicsProject\CleanerScope\captures\AndroidEraser2_NonRoot\PhaseD_PostRestart_NonRoot\26_hits_batterystats_app.txt
+
+Strong finding from Phase D usagestats:
+- package com.cbinnovations.androideraser still persists after reboot.
+- activity history still shows:
+  - Firstlaunch
+  - screen.DataScreen
+  - ExtendedFileManager
+- summary values still show:
+  - totalTime 00:30
+  - lastTime 2026-05-13 21:03:06
+  - appLaunchCount 4
+
+Interpretation:
+- usage history survived both uninstall and reboot.
+- This is the strongest long-term non-root artifact family for this run.
+
+Strong finding from Phase D procstats:
+- Process history for com.cbinnovations.androideraser still persists after reboot.
+
+Strong finding from Phase D batterystats:
+- Historical update/runtime traces still persist after reboot.
+- In the focused output, batterystats still preserves update history for the package, though the focused Phase D result is less explicit than the Phase C pkginst/pkgunin lines.
+
+What did not survive Phase D:
+- recents does not preserve the AndroidEraser task after reboot.
+- package metadata still reports:
+  - Unable to find package: com.cbinnovations.androideraser
+
+Phase D conclusion:
+- After uninstall and reboot, the strongest surviving non-root evidence families are:
+  - dumpsys usagestats
+  - dumpsys procstats
+  - dumpsys batterystats
+- recents and installed-package metadata are not persistent enough to rely on after reboot.
+
+Current overall non-root conclusion after Phase D:
+- Best non-root Phase B evidence:
+  - usagestats
+  - activity recents
+  - package metadata
+  - procstats
+  - batterystats
+- Best non-root long-term persistence evidence after uninstall and reboot:
+  - usagestats
+  - procstats
+  - batterystats
+- adb backup showed mixed value in this app:
+  - Phase A: empty
+  - Phase B: non-empty but limited

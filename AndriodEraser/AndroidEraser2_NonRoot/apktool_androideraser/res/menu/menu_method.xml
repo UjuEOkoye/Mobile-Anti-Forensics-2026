@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@mipmap/ic_united_nations" android:id="@id/Shred0x00" android:title="@string/nuller2" app:showAsAction="ifRoom" />
+    <item android:icon="@mipmap/ic_usa_48dp" android:id="@id/ShredDODME" android:title="@string/dodME" app:showAsAction="ifRoom" />
+    <item android:icon="@mipmap/ic_canada" android:id="@id/ShredCSEC_ITSG_06" android:title="@string/csec_itsg06" app:showAsAction="ifRoom" />
+    <item android:icon="@mipmap/ic_germany_48dp" android:id="@id/ShredBSI_2011_VS" android:title="@string/bsi_2011_vs" app:showAsAction="ifRoom" />
+    <item android:icon="@mipmap/ic_nato" android:id="@id/ShredNato" android:title="@string/nato" app:showAsAction="ifRoom" />
+    <item android:icon="@mipmap/ic_germany_48dp" android:id="@id/ShredBSITL_03423" android:title="@string/bsiTL" app:showAsAction="ifRoom" />
+    <group>
+        <item android:icon="@mipmap/ic_clear" android:id="@id/remove" android:title="@string/remove" app:showAsAction="ifRoom" />
+    </group>
+</menu>

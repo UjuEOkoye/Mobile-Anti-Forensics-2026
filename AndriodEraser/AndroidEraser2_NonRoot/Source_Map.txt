@@ -1,0 +1,123 @@
+﻿AndroidEraser2 Non-Root Source Map
+Date: 2026-05-13
+Package: com.cbinnovations.androideraser
+
+Purpose
+- This file maps the rooted logical source paths to the non-root substitute collection method.
+- It is intended to support later automation design.
+
+Rooted Logical Source Paths
+1. /data/system/usagestats
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - adb shell dumpsys usagestats
+- Expected evidence type:
+  - package usage history
+  - activity timeline
+  - app launch counts
+  - timeActive
+
+2. /data/system_ce/0/recent_tasks
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - adb shell dumpsys activity recents
+  - adb shell dumpsys activity activities
+- Expected evidence type:
+  - task records
+  - realActivity
+  - calling package
+  - activity stack context
+
+3. /data/system_ce/0/snapshots
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - no direct non-root filesystem substitute found
+  - partial indirect context may appear in dumpsys activity outputs
+- Expected evidence type:
+  - UI snapshot remnants
+  - task visual artifacts
+
+4. /data/system_ce/0/recent_images
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - no direct non-root filesystem substitute found
+  - partial indirect context may appear in dumpsys activity outputs
+- Expected evidence type:
+  - recents icon/image artifacts
+
+5. /data/data/com.cbinnovations.androideraser/cache
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - none
+- Expected evidence type:
+  - app-private cache remnants if present
+
+6. /data/data/com.cbinnovations.androideraser/shared_prefs
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - adb backup -noapk com.cbinnovations.androideraser
+- Expected evidence type:
+  - configuration values
+  - possible wipe report data if backup works
+- Current AndroidEraser2 non-root result:
+  - adb backup produced a 0-byte archive
+
+7. /data/data/com.cbinnovations.androideraser/databases
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - adb backup -noapk com.cbinnovations.androideraser
+- Expected evidence type:
+  - app-private DB content if backup works
+- Current AndroidEraser2 non-root result:
+  - adb backup produced a 0-byte archive
+
+8. /data/data/com.android.providers.media/databases/external.db
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - none directly
+  - indirect operational context may appear in dumpsys or logcat
+- Expected evidence type:
+  - MediaProvider folder/file rows
+
+9. /data/data/com.android.providers.downloads/databases/downloads.db
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - none directly
+- Expected evidence type:
+  - download manager rows
+
+10. /data/data/com.android.documentsui/databases/lastAccess.db
+- Rooted status: directly accessible and pullable
+- Non-root status: not directly accessible
+- Non-root substitute:
+  - none directly
+- Expected evidence type:
+  - file picker/access history if populated
+
+Non-Root Primary Collection Commands
+- adb shell dumpsys usagestats
+- adb shell dumpsys activity recents
+- adb shell dumpsys activity activities
+- adb shell dumpsys package com.cbinnovations.androideraser
+- adb shell dumpsys procstats
+- adb shell dumpsys meminfo com.cbinnovations.androideraser
+- adb shell dumpsys batterystats
+- adb backup -noapk com.cbinnovations.androideraser
+
+Non-Root Accessibility Rule
+- Any path under /data/system* or /data/data/* should be assumed inaccessible to shell unless proven otherwise.
+- In non-root mode, automation should treat dumpsys and adb backup as acquisition substitutes rather than path pulls.
+
+Current AndroidEraser2 Non-Root Note
+- Non-root dumpsys collection is working.
+- Non-root adb backup is not producing usable data in this run.
+- Therefore, the main non-root evidence strategy should prioritize dumpsys outputs.

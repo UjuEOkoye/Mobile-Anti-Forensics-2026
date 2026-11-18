@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/colorPrimary" android:padding="15.0dp" android:layout_width="match_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="match_parent" android:layout_height="80.0dp" android:layout_marginBottom="10.0dp" android:src="@mipmap/ic_eraser" android:contentDescription="@null" />
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:weightSum="5.0">
+        <ImageView android:layout_width="wrap_content" android:layout_height="30.0dp" android:src="@mipmap/ic_star_rate_white" android:adjustViewBounds="true" android:tint="@color/star" android:contentDescription="@null" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="30.0dp" android:src="@mipmap/ic_star_rate_white" android:adjustViewBounds="true" android:tint="@color/star" android:contentDescription="@null" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="30.0dp" android:src="@mipmap/ic_star_rate_white" android:adjustViewBounds="true" android:tint="@color/star" android:contentDescription="@null" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="30.0dp" android:src="@mipmap/ic_star_rate_white" android:adjustViewBounds="true" android:tint="@color/star" android:contentDescription="@null" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="30.0dp" android:src="@mipmap/ic_star_rate_white" android:adjustViewBounds="true" android:tint="@color/star" android:contentDescription="@null" />
+    </LinearLayout>
+</LinearLayout>

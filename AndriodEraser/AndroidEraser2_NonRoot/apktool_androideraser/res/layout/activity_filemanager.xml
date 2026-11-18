@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/mTopBar" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageButton android:id="@id/explorer_home" android:layout_width="50.0dp" android:layout_height="wrap_content" android:src="@mipmap/ic_home_white" android:tint="@android:color/white" android:contentDescription="@null" style="@style/Widget.AppCompat.Button.Colored" />
+        <HorizontalScrollView android:id="@id/horizontalScrollView" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <com.cbinnovations.androideraser.shredder.explorer.Navigation android:id="@id/explorer_position" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+    </LinearLayout>
+    <RelativeLayout android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <View android:background="@color/tint" android:layout_width="match_parent" android:layout_height="0.5dp" android:alpha="0.3" />
+    </RelativeLayout>
+    <RelativeLayout android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ImageView android:layout_gravity="center" android:padding="6.0dp" android:layout_width="45.0dp" android:layout_height="wrap_content" android:src="@mipmap/ic_directories" android:adjustViewBounds="true" android:tint="@color/colorPrimary" android:contentDescription="@null" android:alpha="0.6" />
+            <TextView android:textColor="@color/colorPrimary" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/empty_folder" android:alpha="0.6" />
+        </LinearLayout>
+        <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView android:id="@id/recycleView" android:layout_width="match_parent" android:layout_height="match_parent" android:overScrollMode="ifContentScrolls" app:fastScrollPopupBgColor="@color/colorAccent" app:fastScrollPopupTextColor="@android:color/primary_text_dark" app:fastScrollThumbColor="@color/colorAccent" app:fastScrollTrackColor="@android:color/transparent" app:fastScrollVerticalThumbDrawable="@drawable/thumb" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@color/colorPrimaryDark" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="10.0" />
+    <ImageView android:layout_gravity="center" android:id="@id/mLogo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_logo" android:adjustViewBounds="true" android:contentDescription="@null" android:alpha="0.0" app:tint="@color/tint" />
+    <View android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="4.0" />
+    <ImageView android:layout_gravity="center" android:id="@id/mImage" android:layout_width="170.0dp" android:layout_height="160.0dp" android:src="@mipmap/ic_eraser" android:adjustViewBounds="true" android:contentDescription="@null" android:alpha="0.0" />
+    <View android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="4.0" />
+    <LinearLayout android:orientation="vertical" android:id="@id/mText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:alpha="0.0">
+        <TextView android:textSize="30.0sp" android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" />
+        <TextView android:textColor="@color/tint" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Handmade in Germany" />
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="12.0" />
+</LinearLayout>
