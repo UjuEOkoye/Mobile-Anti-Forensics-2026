@@ -1,0 +1,8 @@
+recent_tasks=1
+snapshots=0
+recent_images=0
+usage_stats=1
+app_private_cache=6
+app_private_shared_prefs=2
+app_private_databases=0
+os_artifacts=1

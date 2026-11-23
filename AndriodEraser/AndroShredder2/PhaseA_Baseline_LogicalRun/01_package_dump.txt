@@ -1,0 +1,121 @@
+﻿Activity Resolver Table:
+  Full MIME Types:
+      */*:
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter 8235b0c
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          Type: "*"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter 4139c55
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Category: "android.intent.category.DEFAULT"
+          Type: "*"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+
+  Wild MIME Types:
+      *:
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter 8235b0c
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          Type: "*"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter 4139c55
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Category: "android.intent.category.DEFAULT"
+          Type: "*"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter aaa963f
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+  MIME Typed Actions:
+      android.intent.action.SEND:
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter 8235b0c
+          Action: "android.intent.action.SEND"
+          Category: "android.intent.category.DEFAULT"
+          Type: "*"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+      android.intent.action.SEND_MULTIPLE:
+        7f31a1d com.apparillos.android.androshredder/.MainActivity filter 4139c55
+          Action: "android.intent.action.SEND_MULTIPLE"
+          Category: "android.intent.category.DEFAULT"
+          Type: "*"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      android.intent.action.BOOT_COMPLETED:
+        529a8ca com.apparillos.android.androshredder/.BootCompleteBroadcastReceiver filter f37c25e
+          Action: "android.intent.action.BOOT_COMPLETED"
+
+Key Set Manager:
+  [com.apparillos.android.androshredder]
+      Signing KeySets: 79
+
+Packages:
+  Package [com.apparillos.android.androshredder] (5e5e614):
+    userId=10086
+    pkg=Package{6753ebd com.apparillos.android.androshredder}
+    codePath=/data/app/com.apparillos.android.androshredder-Z1we_wv8eQ0YyzaSkmS5tQ==
+    resourcePath=/data/app/com.apparillos.android.androshredder-Z1we_wv8eQ0YyzaSkmS5tQ==
+    legacyNativeLibraryDir=/data/app/com.apparillos.android.androshredder-Z1we_wv8eQ0YyzaSkmS5tQ==/lib
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    versionCode=207 minSdk=21 targetSdk=26
+    versionName=2.0.7
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{c377cb2 com.apparillos.android.androshredder}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ]
+    dataDir=/data/user/0/com.apparillos.android.androshredder
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      org.apache.http.legacy
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+    timeStamp=2026-05-16 13:25:31
+    firstInstallTime=2026-05-16 13:25:31
+    lastUpdateTime=2026-05-16 13:25:31
+    signatures=PackageSignatures{f4a8403 version:2, signatures:[ee1141df], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    requested permissions:
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.MANAGE_DOCUMENTS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.INTERNET
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+    install permissions:
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+    User 0: ceDataInode=147550 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.READ_EXTERNAL_STORAGE: granted=true
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true
+
+Package Changes:
+  Sequence number=5
+  User 0:
+    seq=3, package=com.google.android.gms
+    seq=4, package=com.apparillos.android.androshredder
+
+
+Dexopt state:
+  [com.apparillos.android.androshredder]
+    path: /data/app/com.apparillos.android.androshredder-Z1we_wv8eQ0YyzaSkmS5tQ==/base.apk
+      x86_64: [status=speed-profile] [reason=install]
+      known secondary dex files:
+        /data/user/0/com.apparillos.android.androshredder/cache/1582435991586.jar
+          class loader context: PCL[];PCL[/system/framework/org.apache.http.legacy.boot.jar:/data/app/com.apparillos.android.androshredder-Z1we_wv8eQ0YyzaSkmS5tQ==/base.apk]
+
+
+Compiler stats:
+  [com.apparillos.android.androshredder]
+     base.apk - 1383
